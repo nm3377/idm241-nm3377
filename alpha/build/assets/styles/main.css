@@ -1,0 +1,157 @@
+body {
+  background-color: #0f0f0f;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 30px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+/* Hide the checkbox itself */
+
+.dislike-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Main circular button */
+
+.dislike-button {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #272727;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+
+/* Thumb images */
+
+.thumb {
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  object-fit: contain;
+}
+
+
+/* Outline is visible by default */
+
+.thumb-outline {
+  opacity: 1;
+}
+
+
+/* Filled version hidden by default */
+
+.thumb-filled {
+  opacity: 0;
+}
+
+
+/* Hover ON */
+
+.dislike-button:hover {
+  background-color: #3f3f3f;
+}
+
+
+/* Tooltip */
+
+.tooltip {
+  position: absolute;
+
+  top: calc(100% + 12px);
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background-color: #616161;
+  color: white;
+
+  padding: 8px 10px;
+
+  border-radius: 4px;
+
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease;
+}
+
+
+/* Show tooltip when hovering */
+
+.dislike-button:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Click ON */
+
+/* Hide outlined thumb */
+
+.dislike-checkbox:checked + .dislike-button .thumb-outline {
+  opacity: 0;
+}
+
+
+/* Show filled thumb */
+
+.dislike-checkbox:checked + .dislike-button .thumb-filled {
+  opacity: 1;
+}
+
+/* Checked + hover */
+
+.dislike-checkbox:checked + .dislike-button:hover {
+  background-color: #3f3f3f;
+}
+
+
+/* Click flash */
+
+.dislike-button:active {
+  background-color: #5a5a5a;
+}
+
+
+/* Make the active flash work while checked too */
+
+.dislike-checkbox:checked + .dislike-button:active {
+  background-color: #5a5a5a;
+}
