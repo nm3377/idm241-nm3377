@@ -155,3 +155,29 @@ h1 {
 .dislike-checkbox:checked + .dislike-button:active {
   background-color: #5a5a5a;
 }
+
+.container_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    gap: 30px;
+    justify-content: center;
+    padding: 50px;
+}
+
+.section {
+    outline-style: double;
+    outline-color: #FF0033;
+    padding: 30px;
+}
+
+@media screen and (max-width: 1400px) {
+    .container_wrapper{
+        grid-template-columns: repeat(2, 400px);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .container_wrapper{
+        grid-template-columns: repeat(1, 500px);
+    }
+}
