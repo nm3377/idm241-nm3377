@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IDM241 Alpha</title>
+    <title>IDM241 Beta</title>
     <link rel = "stylesheet" href="assets/styles/normalize.css">
     <link rel = "stylesheet" href="assets/styles/main.css">
   </head>
@@ -11,14 +11,25 @@
     <div class="header">
       <h1>IDM 241: Beta Description</h1>
       <a href="https://www.youtube.com/watch?v=NyPf5ipLFkU" target="_blank"><h2>Youtube</h2></a>
-      <h2>Object: Dislike Button</h2>
-      <h3>Location</h3>
-      <p>The dislike button can be found almost directly in the center of the page horizontally, on the right side of the bottom of the video player. It is to the right of the like button, and to the left of the share button. By default, it has a bubble behind it and the outline of a thumbs down shape.</p>
-      <p><i>SOMETHING OF NOTE: THE LIKE COUNTER DOES NOT GO DOWN, AS DISLIKES ARE NOT PUBLIC.</i></p>
     </div> 
     <div class="container_wrapper">
       <section class="section">
         <h3>Triggers</h3>
+        <h4>Dislike Button </h4>
+        <ul>
+          <li>Hover ON</li>
+          <li>Hover OFF</li>
+          <li>Click ON</li>
+          <li>Click OFF</li>
+        </ul>
+        <h4>Like Button</h4>
+        <ul>
+          <li>Hover ON</li>
+          <li>Hover OFF</li>
+          <li>Click ON</li>
+          <li>Click OFF</li>
+        </ul>
+        <h4>More Options Button</h4>
         <ul>
           <li>Hover ON</li>
           <li>Hover OFF</li>
@@ -28,10 +39,15 @@
       </section>
       <section class="section">
         <h3>Rules</h3>
+        <h4>Dislike Button</h4>
         <p>Hover ON</p>
         <ul>
           <li>Cursor changes from arrow to pointer</li>
-          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs down icon reading "I Dislike This"</li>
+          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs down icon reading "I Dislike This"
+            <ul>
+              <li>When "Click ON" is active, Dialogue box is changed to read "Undo Dislike"</li>
+            </ul>
+          </li>
           <li>Backdrop behind the thumbs down icon goes from dark gray to light gray over the course of 0.5 seconds</li>
         </ul>
         <p>Hover OFF</p>
@@ -43,86 +59,29 @@
         <p>Click ON</p>
         <ul>
           <li>Thumbs down icon switches from outline to filled with white over the course of 0.3 seconds</li>
-          <li>Thumbs down icon increases in size by 20% over the course of 0.5 seconds</li>
+          <li>Thumbs down icon briefly increases in size by 20% then returns to original size over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
           <li>Monochrome confetti effect over the course of 0.5 seconds</li>
+          <li>New button state is entered that changes dialogue box content</li>
           <li>Video is marked as disliked within the database</li>
         </ul>
         <p>Click OFF</p>
         <ul>
           <li>Thumbs down icon reverts back to outlined state over the course of 0.3 seconds</li>
-          <li>Thumbs down icon reverts back to outlined state over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
-          <li>Thumbs down icon increases in size by 10% over the course of 0.5 seconds</li>          
+          <li>Thumbs down icon briefly increases in size by 10% then returns to original size over the course of 0.5 seconds</li>  
+          <li>New button state is reverted and dialogue box behavior reverts to default</li>        
           <li>Video is removed from dislike section in database</li>
         </ul>
-      </section>
-      <section class="section">
-        <h3>Rules</h3>
-        <p>Hover ON</p>
-        <ul>
-          <li>Cursor changes from arrow to pointer</li>
-          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs down icon reading "I Dislike This"</li>
-          <li>Backdrop behind the thumbs down icon goes from dark gray to light gray over the course of 0.5 seconds</li>
-        </ul>
-        <p>Hover OFF</p>
-        <ul>
-          <li>Cursor changes from pointer to arrow</li>
-          <li>Dialogue box fades out over the course of 0.3 seconds</li>
-          <li>Backdrop returns from light gray to dark gray over the course of 0.3 seconds</li>
-        </ul>
-        <p>Click ON</p>
-        <ul>
-          <li>Thumbs down icon switches from outline to filled with white over the course of 0.3 seconds</li>
-          <li>Thumbs down icon increases in size by 20% over the course of 0.5 seconds</li>
-          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
-          <li>Monochrome confetti effect over the course of 0.5 seconds</li>
-          <li>New button state is entered that changes dialogue box content</li>
-        </ul>
-        <p>Click OFF</p>
-        <ul>
-          <li>Thumbs down icon reverts back to outlined state over the course of 0.3 seconds</li>
-          <li>Thumbs down icon reverts back to outlined state over the course of 0.5 seconds</li>
-          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
-          <li>Thumbs down icon increases in size by 10% over the course of 0.5 seconds</li>
-          <li>New button state is reverted and dialogue box behavior reverts to default</li>
-        </ul>
-      </section>
-      <section class="section">
-        <h3>Loops and Modes</h3>
-        <p>Loops</p>
-        <p>N/A</p>
-        <p>Modes</p>
-        <p>After a "Click ON", the dislike button will enter a new mode, resulting in different text appearing in the dialogue box during a "Hover ON" than in the default state, reading "Undo Dislike" instead of "I Dislike This"</p>
-      </section>
-    </div>
-    <div class="example">
-      <video controls>
-        <source src="assets/images/dislike_example_video.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="header">
-      <h2>Object: Like Button</h2>
-        <h3>Location</h3>
-        <p>The like button can be found almost directly in the center of the page horizontally, on the right side of the bottom of the video player. It is to the left of the dislike button. By default, it has a bubble behind it and the outline of a thumbs up shape</p>
-    </div> 
-      <div class="container_wrapper">
-        <section class="section">
-          <h3>Triggers</h3>
-          <ul>
-            <li>Hover ON</li>
-            <li>Hover OFF</li>
-            <li>Click ON</li>
-            <li>Click OFF</li>
-          </ul>
-        </section>
-      <section class="section">
-        <h3>Rules</h3>
+        <h4>Like Button</h4>
         <p>Hover ON</p>
         <ul>
           <li>Cursor changes from arrow to pointer</li>
           <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs up icon reading "I Like This"</li>
-          <li>Backdrop behind the thumbs down icon goes from dark gray to light gray over the course of 0.5 seconds</li>
+            <ul>
+              <li>When "Click ON" is active, Dialogue box is changed to read "Unlike"</li>
+            </ul>
+          <li>Backdrop behind the thumbs up icon goes from dark gray to light gray over the course of 0.5 seconds</li>
         </ul>
         <p>Hover OFF</p>
         <ul>
@@ -133,86 +92,28 @@
         <p>Click ON</p>
         <ul>
           <li>Thumbs up icon switches from outline to filled with white over the course of 0.3 seconds</li>
-          <li>Thumbs up icon increases in size by 20% over the course of 0.5 seconds</li>
+          <li>Thumbs up icon briefly increases in size by 20% then returns back to original size over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
           <li>Number of likes next to thumbs up icon is updated in real time by +1</li>
+          <li>Confetti effect over the course of 0.5 seconds</li>
+          <li>New button state is entered that changes dialogue box content</li>
           <li>Video is marked as liked within the database</li>
-          <li>New button state is entered that changes dialogue box content</li>
         </ul>
         <p>Click OFF</p>
         <ul>
           <li>Thumbs up icon reverts back to outlined state over the course of 0.3 seconds</li>
-          <li>Thumbs up icon increases in size by 10% over the course of 0.5 seconds</li>
+          <li>Thumbs up icon briefly increases in size by 10% then reverts back to original size over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
           <li>Number of likes next to thumbs up icon is updated in real time by -1</li>
-          <li>Video is removed from like section in database</li>
           <li>New button state is reverted and dialogue box behavior reverts to default</li>
+          <li>Video is removed from like section in database</li>
         </ul>
-      </section>
-      <section class="section">
-        <h3>Rules</h3>
+        <h4>More Options Button</h4>
         <p>Hover ON</p>
         <ul>
           <li>Cursor changes from arrow to pointer</li>
-          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs up icon reading "I Like This"</li>
-          <li>Backdrop behind the thumbs down icon goes from dark gray to light gray over the course of 0.5 seconds</li>
-        </ul>
-        <p>Hover OFF</p>
-        <ul>
-          <li>Cursor changes from pointer to arrow</li>
-          <li>Dialogue box fades out over the course of 0.3 seconds</li>
-          <li>Backdrop returns from light gray to dark gray over the course of 0.3 seconds</li>
-        </ul>
-        <p>Click ON</p>
-        <ul>
-          <li>Thumbs up icon switches from outline to filled with white over the course of 0.3 seconds</li>
-          <li>Thumbs up icon increases in size by 20% over the course of 0.5 seconds</li>
-          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
-          <li>Number of likes next to thumbs up icon is updated in real time by +1</li>
-        </ul>
-        <p>Click OFF</p>
-        <ul>
-          <li>Thumbs up icon reverts back to outlined state over the course of 0.3 seconds</li>
-          <li>Thumbs up icon increases in size by 10% over the course of 0.5 seconds</li>
-          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
-          <li>Number of likes next to thumbs up icon is updated in real time by -1</li>
-        </ul>
-      </section>
-      <section class="section">
-        <h3>Loops and Modes</h3>
-        <p>Loops</p>
-        <p>N/A</p>
-        <p>Modes</p>
-        <p>After a "Click ON", the like button will enter a new mode, resulting in different text appearing in the dialogue box during a "Hover ON" than in the default state, reading "Unlike" instead of "I Like This"</p>
-      </section>
-    </div>
-    <div class="example">
-      <video controls>
-        <source src="assets/images/like_example_video.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="header">
-      <h2>Object: More Options Button</h2>
-        <h3>Location</h3>
-        <p>The more options button can be found below the bottom right edge of the video player. It is to the right of the bookmark button. By default, it has a bubble behind it and 3 hollow dots inside of the bubble.</p>
-    </div> 
-      <div class="container_wrapper">
-        <section class="section">
-          <h3>Triggers</h3>
-          <ul>
-            <li>Hover ON</li>
-            <li>Hover OFF</li>
-            <li>Click ON</li>
-            <li>Click OFF</li>
-          </ul>
-        </section>
-      <section class="section">
-        <h3>Rules</h3>
-        <p>Hover ON</p>
-        <ul>
-          <li>Cursor changes from arrow to pointer</li>
-          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs up icon reading "More Options"</li>
-          <li>Backdrop behind the thumbs down icon goes from dark gray to light gray over the course of 0.5 seconds</li>
+          <li>Dialogue box fades in over the course of 0.5 seconds underneath the three dots icon reading "More Options"</li>
+          <li>Backdrop behind the three dots icon goes from dark gray to light gray over the course of 0.5 seconds</li>
         </ul>
         <p>Hover OFF</p>
         <ul>
@@ -223,7 +124,7 @@
         <p>Click ON</p>
         <ul>
           <li>Three hollow dots icon switches from outline to filled with white over the course of 0.3 seconds</li>
-          <li>Three dots icon increases in size by 20% over the course of 0.5 seconds</li>
+          <li>Three dots icon briefly increases in size by 20% then returns to original size over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
           <li>Dropdown menu with options "Download" and "Report" appear beneath the three dots icon</li>
           <li>New button state is entered that changes how dropdown menu behaves</li>
@@ -231,20 +132,84 @@
         <p>Click OFF</p>
         <ul>
           <li>Three dots icon reverts back to outlined state over the course of 0.3 seconds</li>
-          <li>Three dots icon increases in size by 10% over the course of 0.5 seconds</li>
+          <li>Three dots icon briefly increases in size by 10% then returns to original size over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
           <li>Dropdown menu with options "Download" and "Report" disappears</li>
           <li>New button state is left and dropdown menu behavior is reverted</li>
-
         </ul>
       </section>
       <section class="section">
-        <h3>Rules</h3>
+        <h3>Feedback</h3>
+        <h4>Dislike Button</h4>
         <p>Hover ON</p>
         <ul>
           <li>Cursor changes from arrow to pointer</li>
-          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs up icon reading "More Options"</li>
-          <li>Backdrop behind the thumbs down icon goes from dark gray to light gray over the course of 0.5 seconds.</li>
+          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs down icon reading "I Dislike This"</li>
+            <ul>
+              <li>When "Click ON" is active, Dialogue box is changed to read "Undo Dislike"</li>
+            </ul>
+          <li>Backdrop behind the thumbs down icon goes from dark gray to light gray over the course of 0.5 seconds</li>
+        </ul>
+        <p>Hover OFF</p>
+        <ul>
+          <li>Cursor changes from pointer to arrow</li>
+          <li>Dialogue box fades out over the course of 0.3 seconds</li>
+          <li>Backdrop returns from light gray to dark gray over the course of 0.3 seconds</li>
+        </ul>
+        <p>Click ON</p>
+        <ul>
+          <li>Thumbs down icon switches from outline to filled with white over the course of 0.3 seconds</li>
+          <li>Thumbs down icon briefly increases in size by 20% then returns to original size over the course of 0.5 seconds</li>
+          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
+          <li>Monochrome confetti effect over the course of 0.5 seconds</li>
+          <li>New button state is entered that changes dialogue box content</li>
+        </ul>
+        <p>Click OFF</p>
+        <ul>
+          <li>Thumbs down icon reverts back to outlined state over the course of 0.3 seconds</li>
+          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
+          <li>Thumbs down icon briefly increases in size by 10% then returns to original size over the course of 0.5 seconds</li>
+          <li>New button state is reverted and dialogue box behavior reverts to default</li>
+        </ul>
+        <h4>Like Button</h4>
+        <p>Hover ON</p>
+        <ul>
+          <li>Cursor changes from arrow to pointer</li>
+          <li>Dialogue box fades in over the course of 0.5 seconds underneath the thumbs up icon reading "I Like This"</li>
+            <ul>
+              <li>When "Click ON" is active, Dialogue box is changed to read "Unlike"</li>
+            </ul>
+          <li>Backdrop behind the thumbs up icon goes from dark gray to light gray over the course of 0.5 seconds</li>
+        </ul>
+        <p>Hover OFF</p>
+        <ul>
+          <li>Cursor changes from pointer to arrow</li>
+          <li>Dialogue box fades out over the course of 0.3 seconds</li>
+          <li>Backdrop returns from light gray to dark gray over the course of 0.3 seconds</li>
+        </ul>
+        <p>Click ON</p>
+        <ul>
+          <li>Thumbs up icon switches from outline to filled with white over the course of 0.3 seconds</li>
+          <li>Thumbs up icon briefly increases in size by 20% then returns back to original size over the course of 0.5 seconds</li>
+          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
+          <li>Number of likes next to thumbs up icon is updated in real time by +1</li>
+          <li>Confetti effect over the course of 0.5 seconds</li>
+          <li>New button state is entered that changes dialogue box content</li>
+        </ul>
+        <p>Click OFF</p>
+        <ul>
+          <li>Thumbs up icon reverts back to outlined state over the course of 0.3 seconds</li>
+          <li>Thumbs up icon briefly increases in size by 10% then reverts back to original size over the course of 0.5 seconds</li>
+          <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
+          <li>Number of likes next to thumbs up icon is updated in real time by -1</li>
+          <li>New button state is reverted and dialogue box behavior reverts to default</li>
+        </ul>
+        <h4>More Options Button</h4>
+        <p>Hover ON</p>
+        <ul>
+          <li>Cursor changes from arrow to pointer</li>
+          <li>Dialogue box fades in over the course of 0.5 seconds underneath the three dots icon reading "More Options"</li>
+          <li>Backdrop behind the three dots icon goes from dark gray to light gray over the course of 0.5 seconds</li>
         </ul>
         <p>Hover OFF</p>
         <ul>
@@ -255,30 +220,41 @@
         <p>Click ON</p>
         <ul>
           <li>Three hollow dots icon switches from outline to filled with white over the course of 0.3 seconds</li>
-          <li>Three dots icon increases in size by 20% over the course of 0.5 seconds</li>
+          <li>Three dots icon briefly increases in size by 20% then returns to original size over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
           <li>Dropdown menu with options "Download" and "Report" appear beneath the three dots icon</li>
+          <li>New button state is entered that changes how dropdown menu behaves</li>
         </ul>
         <p>Click OFF</p>
         <ul>
           <li>Three dots icon reverts back to outlined state over the course of 0.3 seconds</li>
-          <li>Three dots icon increases in size by 10% over the course of 0.5 seconds</li>
+          <li>Three dots icon briefly increases in size by 10% then returns to original size over the course of 0.5 seconds</li>
           <li>Background flashes from light gray to a lighter gray over the course of 0.1 seconds</li>
           <li>Dropdown menu with options "Download" and "Report" disappears</li>
+          <li>New button state is left and dropdown menu behavior is reverted</li>
         </ul>
       </section>
       <section class="section">
         <h3>Loops and Modes</h3>
+        <h4>Dislike Button</h4>
         <p>Loops</p>
         <p>N/A</p>
         <p>Modes</p>
-        <p>After a "Click ON", the button is activated and the dropdown menu with options "Download" and "Report" will remain unless the "Click OFF" is initiated</p>
+        <p>Default/Disliked</p>
+        <h4>Like Button</h4>
+        <p>Loops</p>
+        <p>N/A</p>
+        <p>Modes</p>
+        <p>Default/Liked</p>
+        <h4>More Options Button</h4>
+        <p>Loops</p>
+        <p>N/A</p>
+        <p>Modes</p>
+        <p>Default/Open</p>
       </section>
     </div>
     <div class="example">
-      <video controls>
-        <source src="assets/images/options_example_video.mp4" type="video/mp4">
-      </video>
+      <img src="assets/images/beta_description_visual.png" alt="Visualization of Beta Description">
     </div>
   </body>
 </html>
