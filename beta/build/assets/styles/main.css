@@ -1,0 +1,455 @@
+@font-face {
+    font-family: "roboto";
+    src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf) format(ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "roboto", sans-serif;
+}
+
+body{
+    background-color: #0F0F0F;
+    color: white;
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+main {
+    flex: 1;
+}
+
+h2 {
+    color: #FF0033;
+}
+
+.header {
+    text-align: center;
+}
+
+.container_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    gap: 30px;
+    justify-content: center;
+    padding: 50px;
+}
+
+.section {
+    outline-style: double;
+    outline-color: #FF0033;
+    padding: 30px;
+}
+
+.example{
+    align-self: center;
+    padding: 30px;
+}
+
+.example img {
+    width: 920px;
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 1400px) {
+    .container_wrapper{
+        grid-template-columns: repeat(2, 400px);
+    }
+
+    .example{
+        max-width: 700px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .container_wrapper{
+        grid-template-columns: 1fr;
+    }
+
+    .example{
+        max-width: 500px;
+    }
+}
+
+/* --------------------------------
+   BETA INTERACTION DEMO
+-------------------------------- */
+
+.interaction-demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    padding: 80px 30px 120px;
+}
+
+
+/* --------------------------------
+   LIKE / DISLIKE GROUP
+-------------------------------- */
+
+.rating-controls {
+    display: flex;
+    align-items: center;
+
+    height: 48px;
+
+    background-color: #272727;
+    border-radius: 24px;
+}
+
+.control-wrapper {
+    position: relative;
+}
+
+.interaction-button {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background-color: #272727;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+
+/* Hover ON */
+
+.interaction-button:hover {
+    background-color: #4a4a4a;
+
+    transition-duration: 0.5s;
+}
+
+
+/* Hover OFF */
+
+.interaction-button:not(:hover) {
+    transition-duration: 0.3s;
+}
+
+
+/* --------------------------------
+   ICONS
+-------------------------------- */
+
+.interaction-icon {
+    position: absolute;
+
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+.outline-icon {
+    opacity: 1;
+}
+
+.filled-icon {
+    opacity: 0;
+}
+
+
+/* Active mode */
+
+.interaction-button.selected .outline-icon {
+    opacity: 0;
+}
+
+.interaction-button.selected .filled-icon {
+    opacity: 1;
+}
+
+
+/* --------------------------------
+   TOOLTIP
+-------------------------------- */
+
+.tooltip {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 8px 10px;
+
+    background-color: #616161;
+    color: white;
+
+    border-radius: 4px;
+
+    font-size: 12px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+/* Hover ON */
+
+.control-wrapper:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+
+    transition-duration: 0.5s;
+}
+
+
+/* Hover OFF */
+
+.control-wrapper:not(:hover) .tooltip {
+    transition-duration: 0.3s;
+}
+
+
+/* --------------------------------
+   LIKE COUNT
+-------------------------------- */
+
+.like-count {
+    margin-right: 14px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    user-select: none;
+}
+
+
+/* --------------------------------
+   DIVIDER
+-------------------------------- */
+
+.rating-divider {
+    width: 1px;
+    height: 28px;
+
+    background-color: #555;
+}
+
+
+/* --------------------------------
+   ICON CLICK ANIMATIONS
+-------------------------------- */
+
+.interaction-button.pop-on .interaction-icon {
+    animation: pop-on 0.5s ease;
+}
+
+.interaction-button.pop-off .interaction-icon {
+    animation: pop-off 0.5s ease;
+}
+
+
+@keyframes pop-on {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes pop-off {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* --------------------------------
+   BACKGROUND FLASH
+-------------------------------- */
+
+.interaction-button.flash {
+    animation: button-flash 0.1s ease;
+}
+
+
+@keyframes button-flash {
+
+    0% {
+        background-color: #4a4a4a;
+    }
+
+    50% {
+        background-color: #777;
+    }
+
+    100% {
+        background-color: #4a4a4a;
+    }
+}
+
+
+/* --------------------------------
+   CONFETTI
+-------------------------------- */
+
+.confetti-container {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 1px;
+    height: 1px;
+
+    pointer-events: none;
+}
+
+.confetti-piece {
+    position: absolute;
+
+    width: 5px;
+    height: 10px;
+
+    opacity: 0;
+
+    animation: confetti-burst 0.5s ease-out forwards;
+}
+
+
+@keyframes confetti-burst {
+
+    0% {
+        opacity: 1;
+        transform:
+            rotate(var(--rotation))
+            translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            rotate(var(--rotation))
+            translateY(-45px);
+    }
+}
+
+
+/* --------------------------------
+   MORE OPTIONS MENU
+-------------------------------- */
+
+.options-wrapper {
+    position: relative;
+}
+
+.options-menu {
+    position: absolute;
+
+    top: calc(100% + 12px);
+    right: 0;
+
+    width: 160px;
+
+    padding: 8px 0;
+
+    background-color: #282828;
+
+    border-radius: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        visibility 0.5s;
+}
+
+.options-menu.open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.options-menu.closing {
+    opacity: 0;
+    visibility: visible;
+
+    transform: translateY(10px);
+
+    transition-duration: 0.5s;
+}
+
+.options-menu button {
+    width: 100%;
+
+    padding: 10px 16px;
+
+    border: none;
+
+    background: none;
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.options-menu button:hover {
+    background-color: #3f3f3f;
+}
+
+
+/* --------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media screen and (max-width: 600px) {
+
+    .interaction-demo {
+        gap: 12px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
