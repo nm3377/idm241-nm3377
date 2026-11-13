@@ -1,6 +1,6 @@
 @font-face {
     font-family: "roboto";
-    src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf) format(ttf);
+    src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf) format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -9,12 +9,15 @@
     font-family: "roboto", sans-serif;
 }
 
-body{
+body {
     background-color: #0F0F0F;
     color: white;
-    display: flex; 
+
+    display: flex;
     flex-direction: column;
+
     min-height: 100vh;
+
     padding-left: 50px;
     padding-right: 50px;
 }
@@ -31,22 +34,32 @@ h2 {
     text-align: center;
 }
 
+
+/* --------------------------------
+   DESCRIPTION
+-------------------------------- */
+
 .container_wrapper {
     display: grid;
     grid-template-columns: repeat(4, 300px);
+
     gap: 30px;
+
     justify-content: center;
+
     padding: 50px;
 }
 
 .section {
     outline-style: double;
     outline-color: #FF0033;
+
     padding: 30px;
 }
 
-.example{
+.example {
     align-self: center;
+
     padding: 30px;
 }
 
@@ -56,25 +69,6 @@ h2 {
     height: auto;
 }
 
-@media screen and (max-width: 1400px) {
-    .container_wrapper{
-        grid-template-columns: repeat(2, 400px);
-    }
-
-    .example{
-        max-width: 700px;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .container_wrapper{
-        grid-template-columns: 1fr;
-    }
-
-    .example{
-        max-width: 500px;
-    }
-}
 
 /* --------------------------------
    BETA INTERACTION DEMO
@@ -84,6 +78,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 24px;
 
     padding: 80px 30px 120px;
@@ -101,6 +96,7 @@ h2 {
     height: 48px;
 
     background-color: #272727;
+
     border-radius: 24px;
 }
 
@@ -119,6 +115,7 @@ h2 {
     align-items: center;
 
     padding: 0;
+
     border: none;
     border-radius: 50%;
 
@@ -130,7 +127,56 @@ h2 {
 }
 
 
-/* Hover ON */
+/* --------------------------------
+   LIKE SIDE
+-------------------------------- */
+
+.like-wrapper {
+    display: flex;
+    align-items: center;
+
+    height: 48px;
+
+    border-radius: 24px 0 0 24px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.like-wrapper:hover {
+    background-color: #4a4a4a;
+
+    transition-duration: 0.5s;
+}
+
+.like-wrapper:not(:hover) {
+    transition-duration: 0.3s;
+}
+
+.like-button {
+    background-color: transparent;
+}
+
+.like-button:hover {
+    background-color: transparent;
+}
+
+
+/* --------------------------------
+   DISLIKE SIDE
+-------------------------------- */
+
+.dislike-button {
+    width: 60px;
+
+    border-radius: 0 24px 24px 0;
+}
+
+
+/* --------------------------------
+   STANDARD HOVER
+-------------------------------- */
 
 .interaction-button:hover {
     background-color: #4a4a4a;
@@ -138,11 +184,18 @@ h2 {
     transition-duration: 0.5s;
 }
 
-
-/* Hover OFF */
-
 .interaction-button:not(:hover) {
     transition-duration: 0.3s;
+}
+
+
+/*
+   Keep the Like button transparent because
+   the wrapper handles its full-width hover.
+*/
+
+.like-button:hover {
+    background-color: transparent;
 }
 
 
@@ -167,8 +220,14 @@ h2 {
     opacity: 0;
 }
 
+.dark-icon {
+    opacity: 0;
+}
 
-/* Active mode */
+
+/* --------------------------------
+   SELECTED STATE
+-------------------------------- */
 
 .interaction-button.selected .outline-icon {
     opacity: 0;
@@ -176,6 +235,58 @@ h2 {
 
 .interaction-button.selected .filled-icon {
     opacity: 1;
+}
+
+.interaction-button.selected .dark-icon {
+    opacity: 0;
+}
+
+
+/* --------------------------------
+   DEEMPHASIZED STATE
+-------------------------------- */
+
+.interaction-button.deemphasized .outline-icon {
+    opacity: 0;
+}
+
+.interaction-button.deemphasized .filled-icon {
+    opacity: 0;
+}
+
+.interaction-button.deemphasized .dark-icon {
+    opacity: 1;
+}
+
+
+/* Dislike deemphasized */
+
+.dislike-button.deemphasized {
+    background-color: #1A1A1A;
+}
+
+
+/* Like deemphasized */
+
+.like-wrapper.deemphasized {
+    background-color: #1A1A1A;
+}
+
+.like-wrapper.deemphasized .like-count {
+    color: #777;
+}
+
+
+/*
+   Preserve deemphasis while hovering.
+*/
+
+.dislike-button.deemphasized:hover {
+    background-color: #222222;
+}
+
+.like-wrapper.deemphasized:hover {
+    background-color: #222222;
 }
 
 
@@ -199,6 +310,7 @@ h2 {
     border-radius: 4px;
 
     font-size: 12px;
+
     white-space: nowrap;
 
     opacity: 0;
@@ -240,6 +352,8 @@ h2 {
     font-weight: 500;
 
     user-select: none;
+
+    transition: color 0.3s ease;
 }
 
 
@@ -281,6 +395,7 @@ h2 {
     100% {
         transform: scale(1);
     }
+
 }
 
 
@@ -297,6 +412,7 @@ h2 {
     100% {
         transform: scale(1);
     }
+
 }
 
 
@@ -322,6 +438,7 @@ h2 {
     100% {
         background-color: #4a4a4a;
     }
+
 }
 
 
@@ -357,6 +474,7 @@ h2 {
 
     0% {
         opacity: 1;
+
         transform:
             rotate(var(--rotation))
             translateY(0);
@@ -364,10 +482,12 @@ h2 {
 
     100% {
         opacity: 0;
+
         transform:
             rotate(var(--rotation))
             translateY(-45px);
     }
+
 }
 
 
@@ -440,14 +560,53 @@ h2 {
 }
 
 
+/* Tooltip moves above More Options while menu is open */
+
+.options-button.selected ~ .options-tooltip {
+    top: auto;
+    bottom: calc(100% + 12px);
+}
+
+
 /* --------------------------------
-   RESPONSIVE
+   RESPONSIVE DESCRIPTION
+-------------------------------- */
+
+@media screen and (max-width: 1400px) {
+
+    .container_wrapper {
+        grid-template-columns: repeat(2, 400px);
+    }
+
+    .example {
+        max-width: 700px;
+    }
+
+}
+
+
+@media screen and (max-width: 850px) {
+
+    .container_wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .example {
+        max-width: 500px;
+    }
+
+}
+
+
+/* --------------------------------
+   RESPONSIVE INTERACTION
 -------------------------------- */
 
 @media screen and (max-width: 600px) {
 
     .interaction-demo {
         gap: 12px;
+
         padding-left: 10px;
         padding-right: 10px;
     }
